@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Homework #1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+	<template id="new_note">
+		<div class="notes_list_content">
+			<div class="column first">
+				<div></div>
+            </div>
+            <div class="column second">
+                <div></div>
+            </div>
+            <div class="column third">
+                <div></div>
+            </div>
+            <div class="column fourth">
+                <div></div>
+            </div>
+            <div class="column fifth content_container">
+                <div></div>
+            </div>
+            <div class="column sixth">
+                <div></div>
+            </div>
+            <div class="column seventh">
+                <div class="handler_icon edit_icon">
+					<img class="note_icon" src="./img/edit_icon.png" alt="edit" title="edit">
+				</div>
+                <div class="handler_icon archivate_icon">
+					<img class="note_icon" src="./img/archivate_icon_2.png" alt="archivate" title="archivate">
+                    <img class="note_icon" src="./img/dearchivate_icon.png" alt="extract" title="extract" hidden>
+				</div>
+                <div class="handler_icon delete_icon">
+					<img class="note_icon" src="./img/bin_icon_2.png" alt="bin" title="delete">
+				</div>
+            </div>
+		</div>
+	</template>
+    <div id="main">
+        <div id="notes_list">
+            <div id="notes_list_title">
+                <div class="column first">
+                </div>
+                <div class="column second">
+                    <div>Name</div>
+                </div>
+                <div class="column third">
+                    <div>Created</div>
+                </div>
+                <div class="column fourth">
+                    <div>Category</div>
+                </div>
+                <div class="column fifth">
+                    <div>Content</div>
+                </div>
+                <div class="column sixth">
+                    <div>Dates</div>
+                </div>
+                <div class="column seventh">
+                    <div class="handler_icon"></div>
+                    <div class="handler_icon title_archivate_icon">
+						<img class="title_icon" src="./img/archivate_icon_1.png" alt="archivate" title="show/hide archivated">
+					</div>
+                    <div class="handler_icon title_delete_icon">
+						<img class="title_icon" src="./img/bin_icon_1.png" alt="bin" title="delete all">					
+					</div>
+                </div>
+            </div>
+            <div class="create_note_button">
+                <button>
+                    Create Note
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="create_note_block">
+        <div class="note_category">
+            <div class="title_column">
+                <label for="category">
+                    Select a note category
+                </label>
+            </div>
+            <div class="text_column">
+                <select id="category">
+                    <option>
+                        Task
+                    </option>
+                    <option>
+                        Random Thought
+                    </option>
+                    <option>
+                        Quote
+                    </option>
+					<option>
+                        Idea
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="note_name">
+            <div class="title_column">
+                <label for="name">
+                    Name a note
+                </label>
+            </div>
+            <div class="text_column">
+                <textarea placeholder="name..." id="name" required></textarea>
+            </div>
+        </div>
+		<div class="note_content">
+            <div class="title_column">
+                <label for="content">
+                    Tap a note
+                </label>
+            </div>
+            <div class="text_column">
+                <textarea placeholder="note..." id="content" required></textarea>
+            </div>
+        </div>
+		<div class="create_note_buttons">
+            <button class="confirm_btn">
+                Confirm
+            </button>
+			<button class="cancel_btn">
+                Cancel
+            </button>
+        </div>
+    </div>
+    <div id="summary">
+        <div id="summary_title">
+            <div class="column summary_division">
+                <div>
+                    Note category
+                </div>
+            </div>
+            <div class="column summary_division">
+                <div>
+                    Active
+                </div>
+            </div>
+            <div class="column summary_division">
+                <div>
+                    Archived
+                </div>
+            </div>
+        </div>        
+        <div class="summary_note summary_task">
+            <div class="column summary_division">
+                <div class="summary_icon summary_task_icon">
+                </div>
+                <div>Task</div>
+            </div>
+            <div class="column summary_division active_quantity" data-category="Task">
+				<div>
+				</div>
+			</div>
+            <div class="column summary_division archived_quantity" data-category="Task">
+				<div>
+				</div>
+			</div>
+        </div>
+        <div class="summary_note summary_quote">
+            <div class="column summary_division">
+                <div class="summary_icon summary_quote_icon">
+                </div>
+                <div>Quote</div>
+            </div>
+            <div class="column summary_division active_quantity" data-category="Quote">
+				<div>
+				</div>
+			</div>
+            <div class="column summary_division archived_quantity" data-category="Quote">
+				<div>
+				</div>
+			</div>
+        </div>
+        <div class="summary_note summary_random_thought">
+            <div class="column summary_division">
+                <div class="summary_icon summary_random_thought_icon">
+                </div>
+                <div>Random Thought</div>
+            </div>
+            <div class="column summary_division active_quantity" data-category="Random Thought">
+				<div>
+				</div>
+			</div>
+            <div class="column summary_division archived_quantity" data-category="Random Thought">
+				<div>
+				</div>
+			</div>
+        </div>
+        <div class="summary_note summary_idea">
+            <div class="column summary_division">
+                <div class="summary_icon summary_idea_icon">
+                </div>
+                <div>Idea</div>
+            </div>
+            <div class="column summary_division active_quantity" data-category="Idea">
+				<div>
+				</div>		
+			</div>
+            <div class="column summary_division archived_quantity" data-category="Idea">
+				<div>
+				</div>			
+			</div>
+        </div>
+    </div>
+<script src="./script/script.js"></script>
+</body>
+</html>
